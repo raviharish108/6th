@@ -5,9 +5,10 @@ dotenv.config()
 // const express = require('express')
 
 const app = express()
+const cors = require('cors')
 app.use(express.json());
-
-const PORT=4000;
+app.use(cors())
+const PORT=process.env.PORT;
 const  MONGO_URL=process.env.URL
 // const  MONGO_URL="mongodb://127.0.0.1:27017";
  async function createConnection() {
